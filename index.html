@@ -3,42 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whisper in ZephyR</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f3f3f3;
-        }
-        .content {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 2.5em;
-            color: #333;
-        }
-        .memory {
-            margin-top: 20px;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
-    </style>
+    <title>Whisper in Zephyr</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="content">
-        <h1>Whisper in Zephyr</h1>
-        <p class="memory">此网站是我对往日时光的回忆片段……</p>
-        <img src="your-image-url" alt="Memory Image">
+    <!-- 主容器 -->
+    <div class="main-container">
+        <header>
+            <h1 class="fade-in">
+                Whisper In <span class="highlight">Z</span>ephy<span class="highlight">R</span>
+            </h1>
+            <p class="intro fade-in-delay">进入这个web说明你已经收到我的DIARY了吧?<br>不容易啊<br>但可惜这只是一个学校摸鱼时潦草做的网站<br>文笔有限，你不会从中获得什么有用的信息<br>大概都是我的yapping罢了</p>
+        </header>
     </div>
+
+        <!-- 关于内容的介绍部分 -->
+        <section class="about fade-in-bookmarkcontent">
+            <p>2023年8月一句话删了你<br>2024年10月一个梦想起你<br>是啊我做事永远随心所欲<br>欠你挺多的，没什么办法弥补<br>或许用我自己的方式对你说声"再见"会好些吧 </section>
+
+        <!-- 增加额外的内容，让滚动体验更加自然 -->
+
+
+
+        <!-- 按钮部分 -->
+        <div class="buttons fade-in-slow">
+            <button onclick="navigateTo('morning.html')">早安</button>
+            <button onclick="navigateTo('noon.html')">午安</button>
+            <button onclick="navigateTo('night.html')">晚安</button>
+        </div>
+
+        <!-- 滚动提示 -->
+        <p class="scroll-tip">- MORE YAPPING -</p>
+
+
+         <!--添加一个占位空白区域，让滚动体验自然一些：-->
+         <div class="spacer fade-in-slower" style="height: 10px;"></div>
+        <section class="additional-content fade-in-slower">
+            <p>2019与你的相识将我从低谷中解救，<br>
+                而我才意识到自己一直以来都农夫与蛇般一次次伤害你</p>
+            <p>BRO YOU MUST HATE ME SO MUCH LOL</p>
+            <p>WISH U HAVE A GOOD LIFE THEN </p>
+
+            <img src="tenor.gif" alt="MIKU SWING ARMS" width="150" height="150" class="miku-image"/>
+
+            
+
+        </section>
+
+        <!--添加一个占位空白区域，让滚动体验自然一些：-->
+        <div class="spacer fade-in-slow" style="height: 20px;"></div>
+
+        <!-- 深情结束语 -->
+        <footer class="ending fade-in-last">
+            <p>“MISCHIEF MANAGED”</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
