@@ -11,6 +11,45 @@ body {
 }
 
 
+
+/* Form container */
+.bookmark-form-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: #e6eae3;
+    color: #2c3e3f;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+}
+
+.bookmark-form-container h2 {
+    margin-top: 0;
+}
+
+.bookmark-form-container input,
+.bookmark-form-container textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.bookmark-form-container button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
 /* miku图片旋转和放大效果 */
 .miku-image {
     transition: transform 0.5s ease;
@@ -163,10 +202,13 @@ button:hover {
     text-align: left;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    position:relative;
+    z-index: 1;
 }
 
 .bookmark-block:hover {
     transform: translateY(-5px);
+    z-index: 2;
 }
 
 .bookmark-block h2 {

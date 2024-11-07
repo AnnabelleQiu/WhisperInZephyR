@@ -1,36 +1,45 @@
+// Navigate to a specified page
 function navigateTo(page) {
     window.location.href = page;
 }
-// 设置分页参数
-const bookmarksPerPage = 3; // 每页显示的书签数量
-let currentPage = 1; // 当前页码
 
-// 获取所有书签块
-const bookmarks = document.querySelectorAll(".bookmark-block");
+// Settings for pagination
+const bookmarksPerPage = 3; // Number jof bookmarks per page
+let currentPage = 1; // Current page number
 
-// 计算总页数
-const totalPages = Math.ceil(bookmarks.length / bookmarksPerPage);
+// Function to update bookmarks and total pages dynamically
+function updateBookmarks() {
+    // Refresh the list of bookmarks and total pages
+    const bookmarks = document.querySelectorAll(".bookmark-block");
+    window.totalPages = Math.ceil(bookmarks.length / bookmarksPerPage);
+    return bookmarks;
+}
 
-// 显示特定页面的书签
+// Function to display a specific page of bookmarks
 function showPage(page) {
-    // 隐藏所有书签
-    bookmarks.forEach((bookmark, index) => {
+    // Refresh bookmarks dynamically
+    const bookmarks = updateBookmarks();
+
+    // Hide all bookmarks initially
+    bookmarks.forEach((bookmark) => {
         bookmark.style.display = "none";
     });
 
-    // 显示当前页的书签
+    // Calculate start and end index for current page
     const start = (page - 1) * bookmarksPerPage;
     const end = start + bookmarksPerPage;
+
+    // Show bookmarks for the current page
     for (let i = start; i < end && i < bookmarks.length; i++) {
         bookmarks[i].style.display = "block";
     }
 
-    // 更新按钮状态
+    // Update button states
     document.getElementById("prevButton").disabled = (page === 1);
     document.getElementById("nextButton").disabled = (page === totalPages);
 }
 
-// 切换到上一页
+// Function to go to the previous page
 function prevPage() {
     if (currentPage > 1) {
         currentPage--;
@@ -38,7 +47,7 @@ function prevPage() {
     }
 }
 
-// 切换到下一页
+// Function to go to the next page
 function nextPage() {
     if (currentPage < totalPages) {
         currentPage++;
@@ -46,18 +55,26 @@ function nextPage() {
     }
 }
 
-// 初始加载第一页
+// Initialize pagination when the document is loaded
 document.addEventListener("DOMContentLoaded", () => {
+    updateBookmarks();
     showPage(currentPage);
 });
 
-// 导航到指定页面
-function navigateTo(page) {
-    window.location.href = page;
-}
-
-// 平滑滚动到下一个内容区域
+// Smooth scroll to the next content section
 function scrollToContent() {
     const contentSection = document.querySelector('.about');
     contentSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Show the bookmark form
+function showBookmarkForm() {
+    document.getElementById("bookmarkForm").style.display = "block";
+}
+
+// Hide the bookmark form and reset its inputs
+function hideBookmarkForm() {
+    document.getElementById("bookmarkForm").style.display = "none";
+    document.getElementById("newBookmarkTitle").value = "";
+    document.getElementById("newBookmarkContent").value = "";
 }
